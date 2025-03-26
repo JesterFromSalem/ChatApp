@@ -14,6 +14,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.chatapp.nav.MainNav
 import com.example.chatapp.ui.theme.ChatAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -28,6 +30,9 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
                             .fillMaxSize()
                     ) {
+
+                        val navController = rememberNavController()
+                        MainNav(navController)
 
                     }
                 }

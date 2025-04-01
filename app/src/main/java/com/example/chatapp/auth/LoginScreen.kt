@@ -27,10 +27,11 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.chatapp.R
 import com.example.chatapp.ui.theme.Gray400
+import com.example.chatapp.ui.theme.fontSize
+import com.example.chatapp.ui.theme.sizes
+import com.example.chatapp.ui.theme.spacing
 
 @Composable
 fun LoginScreen() {
@@ -45,14 +46,14 @@ fun LoginScreen() {
                     1.0f to Gray400
                 )
             )
-            .padding(horizontal = 16.dp),
+            .padding(horizontal = MaterialTheme.spacing.medium),
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
             color = MaterialTheme.colorScheme.secondary,
             text = stringResource(R.string.login_screen_title),
-            fontSize = 32.sp,
+            fontSize = MaterialTheme.fontSize.headline,
             fontWeight = FontWeight.Bold
         )
         LoginCredentials()
@@ -79,7 +80,7 @@ private fun LoginCredentials() {
             },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 64.dp),
+                .padding(top = MaterialTheme.spacing.extraLarge),
             placeholder = {
                 Text(
                     text = stringResource(R.string.login_screen_email_placeholder)
@@ -94,7 +95,7 @@ private fun LoginCredentials() {
             ),
             shape = TextFieldDefaults.shape,
         )
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
         TextField(
             value = "",
             onValueChange = {},
@@ -129,10 +130,10 @@ private fun LoginCredentials() {
             modifier = Modifier
                 .fillMaxWidth()
         )
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
         Button(
             modifier = Modifier
-                .height(64.dp)
+                .height(MaterialTheme.sizes.buttonHeight)
                 .fillMaxWidth(0.7f),
             colors = ButtonColors(
                 containerColor = MaterialTheme.colorScheme.secondary,
@@ -142,16 +143,16 @@ private fun LoginCredentials() {
             ),
             onClick = {}) {
             Text(
-                fontSize = 24.sp,
+                fontSize = MaterialTheme.fontSize.buttonText,
                 text = stringResource(R.string.login_screen_login_button_text)
             )
         }
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
         Text(
             text = stringResource(R.string.login_screen_to_register_screen_nav),
             color = MaterialTheme.colorScheme.secondary,
-            fontSize = 16.sp,
-            modifier = Modifier.padding(bottom = 64.dp)
+            fontSize = MaterialTheme.fontSize.bodyText,
+            modifier = Modifier.padding(bottom = MaterialTheme.spacing.extraLarge)
         )
     }
 }

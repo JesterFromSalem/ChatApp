@@ -83,7 +83,7 @@ private fun LoginCredentials() {
                 .padding(top = MaterialTheme.spacing.extraLarge),
             placeholder = {
                 Text(
-                    text = stringResource(R.string.login_screen_email_placeholder)
+                    text = stringResource(R.string.auth_email_placeholder)
                 )
             },
             colors = TextFieldDefaults.colors(
@@ -95,7 +95,9 @@ private fun LoginCredentials() {
             ),
             shape = TextFieldDefaults.shape,
         )
+
         Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
+
         TextField(
             value = "",
             onValueChange = {},
@@ -106,7 +108,7 @@ private fun LoginCredentials() {
                     tint = MaterialTheme.colorScheme.secondary,
                     contentDescription = null
                 )
-                 },
+            },
             trailingIcon = {
                 Icon(
                     imageVector = Icons.Filled.VisibilityOff,
@@ -116,7 +118,7 @@ private fun LoginCredentials() {
             },
             placeholder = {
                 Text(
-                    text = stringResource(R.string.login_screen_password_placeholder),
+                    text = stringResource(R.string.auth_password_placeholder),
                 )
             },
             colors = TextFieldDefaults.colors(
@@ -126,11 +128,12 @@ private fun LoginCredentials() {
                 focusedIndicatorColor = MaterialTheme.colorScheme.secondary,
                 unfocusedPlaceholderColor = MaterialTheme.colorScheme.secondary,
             ),
-            shape = TextFieldDefaults.shape,
             modifier = Modifier
                 .fillMaxWidth()
         )
+
         Spacer(modifier = Modifier.height(MaterialTheme.spacing.large))
+
         Button(
             modifier = Modifier
                 .height(MaterialTheme.sizes.buttonHeight)
@@ -147,7 +150,9 @@ private fun LoginCredentials() {
                 text = stringResource(R.string.login_screen_login_button_text)
             )
         }
+
         Spacer(modifier = Modifier.height(MaterialTheme.spacing.medium))
+
         Text(
             text = stringResource(R.string.login_screen_to_register_screen_nav),
             color = MaterialTheme.colorScheme.secondary,
